@@ -15,7 +15,7 @@ export default function AddEval({ setEvals }) {
 
     const token = localStorage.getItem("token")  // get our JWT from local storage
 
-    fetch("https://tv-shows-api-c10.web.app/shows", {
+    fetch("http://localhost:3002/evals", {
       method: "POST",
       headers: { "Content-Type": "application/json",
       "Authorization": token, 

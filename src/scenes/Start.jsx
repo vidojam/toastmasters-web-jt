@@ -1,17 +1,83 @@
+import { useState } from "react"
 import { useNavigate } from "react-router-dom";
 
 export default function Start () {
+
   const navigate = useNavigate();
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [speechTitle, setSpeechTitle] = useState('')
+  
+  const handleAddEval = (e) => {
+    e.preventDefault();
+
+
+
+    const token = localStorage.getItem("token")  // get our JWT from local storage
+
+
+
+    fetch("http://localhost:3002/evals", {
+      method: "POST",
+      headers: { "Content-Type": "application/json",
+      "Authorization": token, 
+    },
+      
+      body: JSON.stringify( {firstName,lastName, speechTitle} )
+    })
+    .then(resp => resp.json())
+    .then(data => {
+      if(data.message) { 
+        alert(data.message) 
+        return 
+      }
+      Start(data);
+      navigate("/");
+    })
+    .catch(alert)
+  }
+
+
   return (
     <>
-      <h2>Start</h2>
-      <img src="https://picsum.photos/300/300?" alt="" />
-      <p>Dolorum ullam eveniet consequuntur ratione labore illo natus odio quisquam ipsum non ex et reiciendis quidem, nam consequatur fugiat numquam eum assumenda.</p>
+      <h2>Start Evaluation</h2>
+
+    <form onSubmit={handleAddEval}>
+      <label htmlFor="firstName">First Name
+        <input 
+          type="text"
+          value={firstName}
+          onChange={ (e)=> { setFirstName(e.target.value)}} />
+      </label>
       
-      <button onClick={ () => navigate("/") } >Evaluation Entries</button>
+      <br />
+      <label htmlFor="lastName">Last Name
+        <input 
+          type="text"
+          value={lastName}
+          onChange={ (e)=> { setLastName(e.target.value)}} />
+      </label>
+      
+      <br />
+
+      <label htmlFor="speechTitle">Speech Title
+        <input
+          type="text"
+          value={speechTitle}
+          onChange={ (e)=> { setSpeechTitle(e.target.value)}} />
+      </label>
+
+      <br />
+
+      <input type="submit" value="Submit" />
+      <button onClick={ () => navigate("/Eval-Entries") } >Enter Evaluations</button>
+
+    </form>
     </>
   )
 }
+
+
 
 // import { useState } from "react"
 // import { useNavigate } from "react-router-dom";
@@ -51,24 +117,32 @@ export default function Start () {
 //   return (
 //     <>
     
-//     <h2>Start Testing</h2>
+//     <h2>Start Evaluation</h2>
 //     <form onSubmit={handleAddEval}>
-//       <label htmlFor="name">Name
+//       <label htmlFor="firstName">First Name
 //         <input 
 //           type="text"
-//           value={name}
-//           onChange={ (e)=> { setName(e.target.value)}} />
+//           value={firstName}
+//           onChange={ (e)=> { setFirstName(e.target.value)}} />
+//       </label>
+      
+//       <br />
+//       <label htmlFor="lastName">Last Name
+//         <input 
+//           type="text"
+//           value={lastName}
+//           onChange={ (e)=> { setLastName(e.target.value)}} />
 //       </label>
       
 //       <br />
 
-//       <label htmlFor="title">Title of Speech
+//       <label htmlFor="speechTitle">Speech Title
 //         <input
 //           type="text"
-//           value={title}
-//           onChange={ (e)=> { settitle(e.target.value)}} />
+//           value={speechTitle}
+//           onChange={ (e)=> { setspeechTitle(e.target.value)}} />
 //       </label>
-//       <test>!!!!!!</test>
+
 //       <br />
 
 //       <input type="submit" value="Add Eval" />

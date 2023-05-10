@@ -1,21 +1,133 @@
-
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
 
-export default function EvaluationEntries () {
+export default function Eval () {
+
   const navigate = useNavigate();
+  const [clarity, setClarity] = useState('');
+  const [eyeContact, setEyeContact] = useState('');
+  const [gestures, setGestures] = useState('')
+  const [vocalVariety, setVocalVariety] = useState('');
+  const [engagesAudience, setEngagesAudience] = useState('');
+  const [confortLevel, setComfortLevel] = useState('')
+   
+  
+  const handleAddEval = (e) => {
+    e.preventDefault();
+
+    const token = localStorage.getItem("token")  // get our JWT from local storage
+
+    fetch("http://localhost:3002/evals", {
+      method: "POST",
+      headers: { "Content-Type": "application/json",
+      "Authorization": token, 
+    },
+      
+      body: JSON.stringify( {clarity,vocalVariety, eyeContact} )
+    })
+    .then(resp => resp.json())
+    .then(data => {
+      if(data.message) { 
+        alert(data.message) 
+        return 
+      }
+      eval(data);
+      navigate("/");
+    })
+    .catch(alert)
+  }
 
 
   return (
     <>
-      <h2>Evaluation Entries</h2>
-      <img src="https://media.istockphoto.com/id/1405730723/photo/empty-asphalt-road-and-new-year-2023-concept-driving-on-an-empty-road-to-goals-2023-with.jpg?b=1&s=170667a&w=0&k=20&c=xn2OFq_1n9KNM8OdUzIxKBH949UOqe5M4_VQ7XAcvwQ=" alt="" 
-      />
-     
-           
+      <h1>Evaluation Entries</h1>
+      <h2>Enter Evaluation levels 1 to 5 (5 being best)</h2>
 
+    <form onSubmit={handleAddEval}>
 
-      <button onClick={ () => navigate("/") } >Go to Home</button>
+    // firstName, lastName & speech title belows
+
+      {/* <label htmlFor="firstName">First Name
+        <input 
+          type="text"
+          value={firstName}
+          onChange={ (e)=> { setFirstName(e.target.value)}} />
+      </label>
+      
+      <br />
+      <label htmlFor="lastName">Last Name
+        <input 
+          type="text"
+          value={lastName}
+          onChange={ (e)=> { setLastName(e.target.value)}} />
+      </label>
+      
+      <br />
+
+      <label htmlFor="speechTitle">Speech Title
+        <input
+          type="text"
+          value={speechTitle}
+          onChange={ (e)=> { setSpeechTitle(e.target.value)}} />
+      </label> */}
+
+      <br />
+      <label htmlFor="clarity">Clarity of Speech
+        <input 
+          type="text"
+          value={clarity}
+          onChange={ (e)=> { setClarity(e.target.value)}} />
+      </label>
+      
+      <br />
+      <label htmlFor="vocalVariety">Uses Vocal Variety
+        <input 
+          type="text"
+          value={vocalVariety}
+          onChange={ (e)=> { setVocalVariety(e.target.value)}} />
+      </label>
+      
+      <br />
+
+      <label htmlFor="eyeContact">Makes Eye Contact
+        <input
+          type="text"
+          value={eyeContact}
+          onChange={ (e)=> { setEyeContact(e.target.value)}} />
+      </label>
+
+      <br />
+      <label htmlFor="gestures">Uses Gestures
+        <input 
+          type="text"
+          value={gestures}
+          onChange={ (e)=> { setGestures(e.target.value)}} />
+      </label>
+      
+      <br />
+      <label htmlFor="engagesAudience">Engages Audience
+        <input 
+          type="text"
+          value={engagesAudience}
+          onChange={ (e)=> { setEngagesAudience(e.target.value)}} />
+      </label>
+      
+      <br />
+
+      <label htmlFor="confortLevel">Comfort Level
+        <input
+          type="text"
+          value={confortLevel}
+          onChange={ (e)=> { setComfortLevel(e.target.value)}} />
+      </label>
+
+      <br />
+
+      <input type="submit" value="Submit" />
+
+      <button onClick={ () => navigate("/") } >Home</button>
+
+    </form>
     </>
   )
 }

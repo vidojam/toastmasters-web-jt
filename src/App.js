@@ -14,7 +14,7 @@ import Evaluation from "./scenes/Evaluation.jsx";
 
 function App() {
   const [evals, setEvals] = useState();
-  const [user, setUser] = useState();
+  // const [user, setUser] = useState();
 
   return (
     <>    

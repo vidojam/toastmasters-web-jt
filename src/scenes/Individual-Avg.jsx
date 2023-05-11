@@ -1,14 +1,20 @@
 import { useNavigate } from "react-router-dom";
 
-export default function IndividualAvg () {
+export default function EvalRecaps () {
   const navigate = useNavigate();
+
+  function sumAverage() {
+    for (let i = 0; i < Array.length; i++) {
+        
+    }   
+  } 
 
   return (
     <>
-      <h2>Individual Average</h2>
-      <img src="https://picsum.photos/300/300?" alt="" />
-      <p>Dolorum ullam eveniet consequuntur ratione labore illo natus odio quisquam ipsum non ex et reiciendis quidem, nam consequatur fugiat numquam eum assumenda.</p>
-      
+      <h2>Pompano Beach Toastmaster Club Individual Evaluator Averages</h2>
+     
+
+
       <button onClick={ () => navigate("/") } >Go to Home</button>
     </>
   )

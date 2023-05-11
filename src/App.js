@@ -25,8 +25,8 @@ function App() {
             <Link to="/" className='App-link'>Home</Link> |&nbsp; 
             <Link to="/Start" className='App-link'>Start</Link> |&nbsp; 
             <Link to="/Eval-Entries" className='App-link'>Evaluation Entries</Link> |&nbsp; 
-            <Link to="/Eval-Recap" className='App-link'>Evaluation Recaps</Link> |&nbsp; 
-            <Link to="/Individual-Avg" className='App-link'>Individual Average</Link> |&nbsp; 
+            <Link to="/Eval-Recap" className='App-link'>Evaluator Total Average</Link> |&nbsp; 
+            <Link to="/Individual-Avg" className='App-link'>Club Averages</Link> |&nbsp; 
             <Link to="/About" className='App-link'>About</Link>  
             {/* <Link to="/login" className='App-link'>Login</Link> |&nbsp; 
             <Link to="/signup" className='App-link'>Sign Up</Link> */}

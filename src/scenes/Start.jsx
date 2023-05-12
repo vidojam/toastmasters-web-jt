@@ -12,12 +12,10 @@ export default function Start () {
   const handleAddEval = (e) => {
     e.preventDefault();
 
-    const token = localStorage.getItem("token")  // get our JWT from local storage
-
     fetch("https:////api-toastmasters-jt.web.app/evals", {
       method: "POST",
       headers: { "Content-Type": "application/json",
-      // "Authorization": token, 
+      
     },
       
       body: JSON.stringify( {firstName,lastName, speechTitle} )

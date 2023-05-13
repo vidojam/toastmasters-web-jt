@@ -1,25 +1,26 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
-import Start from "./Start";
 
 
 export default function EvalEntries () {
 
-  const navigate = useNavigate();
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [speechTitle, setSpeechTitle] = useState('')
   const [clarity, setClarity] = useState('');
   const [eyeContact, setEyeContact] = useState('');
   const [gestures, setGestures] = useState('')
   const [vocalVariety, setVocalVariety] = useState('');
   const [engagesAudience, setEngagesAudience] = useState('');
   const [comfortLevel, setComfortLevel] = useState('')
+  const navigate = useNavigate();
    
   
   const handleAddEval = (e) => {
     e.preventDefault();
-
+  
+  // onSubmit...clear text boxes  
   // const arr = [clarity, eyeContact, gestures, vocalVariety, engagesAudience, comfortLevel]  
-
-  // const token = localStorage.getItem("token")  // get our JWT from local storage
 
     fetch("https://api-toastmasters-jt.web.app/evals", {
       method: "POST",
@@ -27,7 +28,7 @@ export default function EvalEntries () {
      
     },
       
-      body: JSON.stringify( {clarity,vocalVariety, eyeContact, gestures, engagesAudience, comfortLevel} )
+      body: JSON.stringify( {firstName, lastName, speechTitle, clarity,vocalVariety, eyeContact, gestures, engagesAudience, comfortLevel} )
 
     })
     .then(resp => resp.json())
@@ -56,16 +57,42 @@ export default function EvalEntries () {
     <>
     <main>
       <div>
-        <h1>Evaluation Entries</h1>
-        <h2>Enter Evaluation levels 1 to 5 (5 being best)</h2>
+        <h1>Evaluation Assistant</h1>
+        <h3>Enter Evaluation Level</h3>
+        <h3>5 - Excellent | 4 - Very Good | 3 - Good | 2 - Need Some Practice | 1 - Need A Trainer</h3>
       </div>
-      <section className="start-main">
-        <form onSubmit={handleAddEval}>
-        
-           {/* <h2>{firstName}</h2>
-           <h2>{lastname}</h2>
-           <h2>{speechTitle}</h2>  */}
+     
+        <section className="start-main">
+          <form onSubmit={handleAddEval}>
 
+          <label className="start" htmlFor="firstName">First Name
+          <input 
+            type="text"
+            value={firstName}
+            onChange={ (e)=> { setFirstName(e.target.value)}} />
+        </label>
+        
+        <br />
+        <label className="start" htmlFor="lastName">Last Name
+          <input 
+            type="text"
+            value={lastName}
+            onChange={ (e)=> { setLastName(e.target.value)}} />
+        </label>
+        
+        <br />
+
+        <label className="speechTitle" htmlFor="speechTitle">Speech Title
+          <input
+            className="clarity" 
+            id="clarity" 
+            type="text"
+            value={speechTitle}
+            onChange={ (e)=> { setSpeechTitle(e.target.value)}} />
+        </label>
+
+      <br />
+    
           <label htmlFor="clarity">Clarity of Speech
             <input 
               className="clarity" 
@@ -73,12 +100,11 @@ export default function EvalEntries () {
               type="number"
               value={clarity}
               onChange={ (e)=> { setClarity(e.target.value)}}
-              />
-           
-           
+              /> 
           </label>
           
           <br />
+
           <label 
           htmlFor="vocalVariety">Uses Vocal Variety
             <input 
@@ -88,8 +114,6 @@ export default function EvalEntries () {
               value={vocalVariety}
               onChange={ (e)=> { setVocalVariety(e.target.value)}} />
           </label>
-              sum = sum + e.target.value
-              console.log(sum)
           
           <br />
 
@@ -139,20 +163,16 @@ export default function EvalEntries () {
             <input
               className="evalAverage" 
               id="evalAverage"
-              type="number"
-              value={evalAverage}
+              type="number" 
+              value={4.5} // test number for db - evalAverage variable
               onChange={ (e)=> { setComfortLevel(e.target.value)}} />
           </label>
 
           <br />
 
-          Average()
-          console.log(eval) 
           <input type="submit" value="Submit" />
-
-          <button onClick={ () => navigate("/Eval-Recap") } >Next</button>
-        
-          {/* `The evaluation average for ${firstName} {lastName} is ${averEval}` */}
+          
+          <button onClick={ () => navigate("/") } >Next</button>
 
         </form>
       </section>

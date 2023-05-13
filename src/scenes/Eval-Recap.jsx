@@ -6,12 +6,8 @@ import EvalEntries from "./Eval-Entries";
 export default function EvalRecaps () {
   const navigate = useNavigate();
 
-  function sumAverage() {
-    for (let i = 0; i < Array.length; i++) {
-        
-    }   
-  } 
-
+  // findOne({ firstName: Niel, lastName: Armstrong })
+ 
   return (
     <>
       <h2>Evaluator Total Average</h2>

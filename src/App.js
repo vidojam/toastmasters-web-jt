@@ -17,13 +17,13 @@ function App() {
   // const [user, setUser] = useState();
 
   return (
-    <>    
+    <>  
     <BrowserRouter>
     <div className="App">
         <header className="App-header">
           <nav>
             <Link to="/" className='App-link'>Home</Link> |&nbsp; 
-            <Link to="/Start" className='App-link'>Start</Link> |&nbsp; 
+            {/* <Link to="/Start" className='App-link'>Start</Link> |&nbsp;  */}
             <Link to="/Eval-Entries" className='App-link'>Evaluation Entries</Link> |&nbsp; 
             <Link to="/Eval-Recap" className='App-link'>Evaluator Total Average</Link> |&nbsp; 
             <Link to="/Individual-Avg" className='App-link'>Club Averages</Link> |&nbsp; 
@@ -34,7 +34,7 @@ function App() {
           <Routes>
           
           <Route path="/" element={<Home />} />
-          <Route path="/Start" element={<Start />} />
+          {/* <Route path="/Start" element={<Start />} /> */}
           <Route path="/Eval-Entries" element={<EvaluationEntries />} />
           <Route path="/Eval-Recap" element={<EvalRecaps />} />
           <Route path="/Individual-Avg" element={<IndividualAvg />} />
@@ -43,6 +43,7 @@ function App() {
             <Route path="/signup" element={<Signup />} /> */}
            
           </Routes>
+        
         </header>
       </div>
     </BrowserRouter>

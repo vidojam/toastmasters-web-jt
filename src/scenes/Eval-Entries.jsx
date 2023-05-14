@@ -194,7 +194,7 @@ export default function EvalEntries () {
           
           <input type="submit" value="Submit" />
           
-          <button onClick={ () => navigate("/Indiv-Recap") } >Next</button>
+          <button onClick={ () => navigate("/") } >Next</button>
         </form>
 
         {sumAll(arr)}

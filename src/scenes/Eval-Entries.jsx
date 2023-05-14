@@ -13,22 +13,24 @@ export default function EvalEntries () {
   const [vocalVariety, setVocalVariety] = useState('');
   const [engagesAudience, setEngagesAudience] = useState('');
   const [comfortLevel, setComfortLevel] = useState('')
+  const [evalAverage, setEvalAverage ] =useState('')
   const navigate = useNavigate();
-   
+
+  //TODO!!!
+  // onSubmit...clear text boxes  
+  const arr = [clarity, eyeContact, gestures, vocalVariety, engagesAudience, comfortLevel]  
   
   const handleAddEval = (e) => {
     e.preventDefault();
-  
-  // onSubmit...clear text boxes  
-  // const arr = [clarity, eyeContact, gestures, vocalVariety, engagesAudience, comfortLevel]  
 
+  
     fetch("https://api-toastmasters-jt.web.app/evals", {
       method: "POST",
       headers: { "Content-Type": "application/json",
      
     },
       
-      body: JSON.stringify( {firstName, lastName, speechTitle, clarity,vocalVariety, eyeContact, gestures, engagesAudience, comfortLevel} )
+      body: JSON.stringify( {firstName, lastName, speechTitle, clarity,vocalVariety, eyeContact, gestures, engagesAudience, comfortLevel, evalAverage} )
 
     })
     .then(resp => resp.json())
@@ -44,22 +46,26 @@ export default function EvalEntries () {
   }
 
 
-  let evalNum = 0;
-  const averageEval = 0;
-  const sum = 0;
-  const evalAverage = 0;
-
-  function Average() {
-    averageEval = sum/6
-    return evalAverage
+  function sumAll(arr) {
+    if (arr[0] > arr[1])
+      arr.sort((a, b) => a - b)
+    let sum = 0
+    let average = 0
+    
+    for (let i = arr[0]; i <= arr[1]; i++)
+    sum += i
+    average = sum/6
+    return average
   }
+
+
   return (
     <>
     <main>
       <div>
         <h1>Evaluation Assistant</h1>
         <h3>Enter Evaluation Level</h3>
-        <h3>5 - Excellent | 4 - Very Good | 3 - Good | 2 - Need Some Practice | 1 - Need A Trainer</h3>
+        <h3>5 - Excellent | 4 - Very Good | 3 - Good | 2 - Need Practice | 1 - Need A Trainer</h3>
       </div>
      
         <section className="start-main">
@@ -98,6 +104,8 @@ export default function EvalEntries () {
               className="clarity" 
               id="clarity" 
               type="number"
+              min="1"
+              max="5"
               value={clarity}
               onChange={ (e)=> { setClarity(e.target.value)}}
               /> 
@@ -111,6 +119,8 @@ export default function EvalEntries () {
               className="vocalVariety" 
               id="vocalVariety"
               type="number"
+              min="1"
+              max="5"
               value={vocalVariety}
               onChange={ (e)=> { setVocalVariety(e.target.value)}} />
           </label>
@@ -122,6 +132,8 @@ export default function EvalEntries () {
               className="eyeContact" 
               id="eyeContact"
               type="number"
+              min="1"
+              max="5"
               value={eyeContact}
               onChange={ (e)=> { setEyeContact(e.target.value)}} />
           </label>
@@ -132,6 +144,8 @@ export default function EvalEntries () {
               className="gestures" 
               id="gestures"
               type="number"
+              min="1"
+              max="5"
               value={gestures}
               onChange={ (e)=> { setGestures(e.target.value)}} />
           </label>
@@ -142,6 +156,8 @@ export default function EvalEntries () {
               className="engagesAudience" 
               id="engagesAudience"  
               type="number"
+              min="1"
+              max="5"
               value={engagesAudience}
               onChange={ (e)=> { setEngagesAudience(e.target.value)}} />
           </label>
@@ -153,6 +169,8 @@ export default function EvalEntries () {
               className="comfortLevel" 
               id="comfortLevel"
               type="number"
+              min="1"
+              max="5"
               value={comfortLevel}
               onChange={ (e)=> { setComfortLevel(e.target.value)}} />
           </label>
@@ -160,21 +178,27 @@ export default function EvalEntries () {
           <br />
 
           <label htmlFor="evalAverage">Evaluation Average
+
             <input
               className="evalAverage" 
               id="evalAverage"
               type="number" 
-              value={4.5} // test number for db - evalAverage variable
-              onChange={ (e)=> { setComfortLevel(e.target.value)}} />
+              min="0"
+              max="5"
+              value ={"average"} // test number for db - evalAverage variable
+              onChange={ (e)=> { setEvalAverage(e.target.value)}} />
+            
           </label>
 
           <br />
-
+          
           <input type="submit" value="Submit" />
           
-          <button onClick={ () => navigate("/") } >Next</button>
-
+          <button onClick={ () => navigate("/Indiv-Recap") } >Next</button>
         </form>
+
+        {sumAll(arr)}
+
       </section>
     </main>
     </>

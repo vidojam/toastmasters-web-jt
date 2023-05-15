@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
+import Footer from "./Footer";
 
 
 export default function EvalEntries () {
@@ -18,7 +19,8 @@ export default function EvalEntries () {
 
   //TODO!!!
   // onSubmit...clear text boxes  
-  const arr = [clarity, eyeContact, gestures, vocalVariety, engagesAudience, comfortLevel]  
+
+  // const arr = [clarity, eyeContact, gestures, vocalVariety, engagesAudience, comfortLevel]  
   
   const handleAddEval = (e) => {
     e.preventDefault();
@@ -46,40 +48,29 @@ export default function EvalEntries () {
   }
 
 
-  function sumAll(arr) {
-    if (arr[0] > arr[1])
-      arr.sort((a, b) => a - b)
-    let sum = 0
-    let average = 0
-    
-    for (let i = arr[0]; i <= arr[1]; i++)
-    sum += i
-    average = sum/6
-    return average
-  }
-
-
   return (
     <>
     <main>
-      <div>
+      <div className="main-eval">
         <h1>Evaluation Assistant</h1>
-        <h3>Enter Evaluation Level</h3>
-        <h3>5 - Excellent | 4 - Very Good | 3 - Good | 2 - Need Practice | 1 - Need A Trainer</h3>
+        <h2>Enter Evaluation Levels</h2>
+        <h3 className="eval-levels">5 - Excellent | 4 - Very Good | 3 - Good | 2 - Need Practice | 1 - Need A Trainer</h3>
       </div>
      
         <section className="start-main">
           <form onSubmit={handleAddEval}>
 
-          <label className="start" htmlFor="firstName">First Name
+          <label className="start-firstName" htmlFor="firstName">First Name
           <input 
             type="text"
+            pattern="[A-z]"
+            oninput="this.value = this.value.toUpperCase()"
             value={firstName}
             onChange={ (e)=> { setFirstName(e.target.value)}} />
         </label>
         
         <br />
-        <label className="start" htmlFor="lastName">Last Name
+        <label className="start-lastName" htmlFor="lastName">Last Name
           <input 
             type="text"
             value={lastName}
@@ -88,119 +79,118 @@ export default function EvalEntries () {
         
         <br />
 
-        <label className="speechTitle" htmlFor="speechTitle">Speech Title
+        <label className="start-speechTitle" htmlFor="speechTitle">Speech Title
           <input
-            className="clarity" 
-            id="clarity" 
-            type="text"
             value={speechTitle}
             onChange={ (e)=> { setSpeechTitle(e.target.value)}} />
         </label>
 
       <br />
-    
-          <label htmlFor="clarity">Clarity of Speech
-            <input 
-              className="clarity" 
-              id="clarity" 
-              type="number"
-              min="1"
-              max="5"
-              value={clarity}
-              onChange={ (e)=> { setClarity(e.target.value)}}
-              /> 
-          </label>
-          
-          <br />
-
-          <label 
-          htmlFor="vocalVariety">Uses Vocal Variety
-            <input 
-              className="vocalVariety" 
-              id="vocalVariety"
-              type="number"
-              min="1"
-              max="5"
-              value={vocalVariety}
-              onChange={ (e)=> { setVocalVariety(e.target.value)}} />
-          </label>
-          
-          <br />
-
-          <label className="eyeContact" id="eyeContact" htmlFor="eyeContact">Makes Eye Contact
-            <input
-              className="eyeContact" 
-              id="eyeContact"
-              type="number"
-              min="1"
-              max="5"
-              value={eyeContact}
-              onChange={ (e)=> { setEyeContact(e.target.value)}} />
-          </label>
-
-          <br />
-          <label className="gestures" id="gestures" htmlFor="gestures">Uses Gestures
-            <input 
-              className="gestures" 
-              id="gestures"
-              type="number"
-              min="1"
-              max="5"
-              value={gestures}
-              onChange={ (e)=> { setGestures(e.target.value)}} />
-          </label>
-          
-          <br />
-          <label htmlFor="engagesAudience">Engages Audience
-            <input 
-              className="engagesAudience" 
-              id="engagesAudience"  
-              type="number"
-              min="1"
-              max="5"
-              value={engagesAudience}
-              onChange={ (e)=> { setEngagesAudience(e.target.value)}} />
-          </label>
-          
-          <br />
-
-          <label htmlFor="comfortLevel">Comfort Level
-            <input
-              className="comfortLevel" 
-              id="comfortLevel"
-              type="number"
-              min="1"
-              max="5"
-              value={comfortLevel}
-              onChange={ (e)=> { setComfortLevel(e.target.value)}} />
-          </label>
-
-          <br />
-
-          <label htmlFor="evalAverage">Evaluation Average
-
-            <input
-              className="evalAverage" 
-              id="evalAverage"
-              type="number" 
-              min="0"
-              max="5"
-              value ={"average"} // test number for db - evalAverage variable
-              onChange={ (e)=> { setEvalAverage(e.target.value)}} />
+          <div class="flex-container">
+            <label htmlFor="clarity">Clarity of Speech
+              <input 
+                className="eval-sect" 
+                id="clarity" 
+                type="number"
+                min="1"
+                max="5"
+                value={clarity}
+                onChange={ (e)=> { setClarity(e.target.value)}}
+                /> 
+            </label>
             
-          </label>
+            <br />
+
+            <label 
+            htmlFor="vocalVariety">Vocal Variety
+              <input 
+                className="eval-sect" 
+                type="number"
+                min="1"
+                max="5"
+                value={vocalVariety}
+                onChange={ (e)=> { setVocalVariety(e.target.value)}} />
+            </label>
+            
+            <br />
+
+            <label className="eyeContact" id="eyeContact" htmlFor="eyeContact">Eye Contact
+              <input
+                className="eval-sect" 
+                id="eyeContact"
+                type="number"
+                min="1"
+                max="5"
+                value={eyeContact}
+                onChange={ (e)=> { setEyeContact(e.target.value)}} />
+            </label>
+
+            <br />
+            <label className="gestures" id="gestures" htmlFor="gestures">Uses Gestures
+              <input 
+                className="eval-sect" 
+                id="gestures"
+                type="number"
+                min="1"
+                max="5"
+                value={gestures}
+                onChange={ (e)=> { setGestures(e.target.value)}} />
+            </label>
+            
+            <br />
+            <label htmlFor="engagesAudience">Engages Audience
+              <input 
+                className="eval-sect" 
+                id="engagesAudience"  
+                type="number"
+                min="1"
+                max="5"
+                value={engagesAudience}
+                onChange={ (e)=> { setEngagesAudience(e.target.value)}} />
+            </label>
+            
+            <br />
+
+            <label htmlFor="comfortLevel">Comfort Level
+              <input
+                className="eval-sect" 
+                id="comfortLevel"
+                type="number"
+                min="1"
+                max="5"
+                value={comfortLevel}
+                onChange={ (e)=> { setComfortLevel(e.target.value)}} />
+            </label>
+
+            <br />
+
+            <label htmlFor="evalAverage">Evaluation Average
+
+              <input
+                className="eval-sect" 
+                id="evalAverage"
+                type="number" 
+                min="0"
+                max="5"
+                value ={"average"} // test number for db - evalAverage variable
+                onChange={ (e)=> { setEvalAverage(e.target.value)}} />
+              
+            </label>
+
+          </div>
 
           <br />
-          
-          <input type="submit" value="Submit" />
-          
-          <button onClick={ () => navigate("/") } >Next</button>
+          <div className="subnext">
+            <input className="subbtn" type="submit" value="Submit" />
+            <button className="nextbtn" onClick={ () => navigate("/Indiv-Recap") } >Next</button>
+          </div>
+
         </form>
 
-        {sumAll(arr)}
-
       </section>
+      {Footer()}
     </main>
+   
     </>
   )
 }

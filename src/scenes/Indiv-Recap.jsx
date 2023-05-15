@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-
+import Footer from "./Footer";
 
 export default function IndivRecap() {
   const [searchFirstName, setSearchFirstName] = useState('');
@@ -19,13 +19,16 @@ export default function IndivRecap() {
 
   return (
     <>
-      <h3>Individual History Request:</h3>
+      <h1>Individual Evaluation History:</h1>
 
       <main>
         <form>
-          <label className="start" htmlFor="firstName">First Name
+          <label className="start-firstName2" htmlFor="firstName">First Name
             <input
               type="text"
+              pattern="[A-z]*"
+              oninput="this.value = this.value.toUpperCase()"
+              onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charcode > 96 && event.charcode < 123)"
               placeholder="First Name"
               value={searchFirstName}
               onChange={(e) => { setSearchFirstName(e.target.value) }} />
@@ -33,46 +36,44 @@ export default function IndivRecap() {
 
           <br />
 
-          <input type="submit" value="Submit" />
+        
           {searchResult.length > 0 && (
             <div>
               {searchResult.map((evals) => {
                 return (
-                  <div key={evals._id}>
-                    <h3>Speech Title: {evals.speechTitle}</h3>
-                    <h3>Clarity: {evals.clarity}</h3>
-                    <h3>Vocal Variety: {evals.vocalVariety}</h3>
-                    <h3>Eye Contact: {evals.eyeContact}</h3>
-                    <h3>Gestures: {evals.gestures}</h3>
-                    <h3>Engages Audience: {evals.engagesAudience}</h3>
-                    <h3>Comfort Level: {evals.comfortLevel}</h3>
-
+                  <div class="flex-container">
+                    <div className="eval-sect" classname="result" key={evals._id}>
+                      <h3>Speech Title: {evals.speechTitle}</h3>
+                      <h4>Clarity: {evals.clarity}</h4>
+                      <h4>Vocal Variety: {evals.vocalVariety}</h4>
+                      <h4>Eye Contact: {evals.eyeContact}</h4>
+                      <h4>Gestures: {evals.gestures}</h4>
+                      <h4>Engages Audience: {evals.engagesAudience}</h4>
+                      <h4>Comfort Level: {evals.comfortLevel}</h4>
+                    </div>
                   </div>
                 )
               })}
             </div>
           )}
 
-          <button onClick={() => navigate("/")}>Go to Home</button>
+          <div className="subnext2">
+            <input className="subbtn2" type="submit" value="Submit" />
+            <button className="nextbtn2" onClick={() => navigate("/")}>Go to Home</button>
+          </div>
+
         </form>
+        {Footer()}
       </main>
+    
     </>
   )
 }
 
 
 
-    // findOne({ firstName: Niel, lastName:Armstrong})
+    
 
-    // App.get ('/api/evals/firstName', async (req, res) => {
-    //   const result = await eval.findOne(req.params.firstName, {
-    //     firstName: 1,
-    //     lastName: 1
-    //   });
-    //   res.json({"evals": result});
-    // })
-
-    //db.products.find( { "firstName" : "Niel" } ).map(function(i) { return i.item; })
 
 
 

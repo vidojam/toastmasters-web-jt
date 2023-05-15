@@ -1,6 +1,133 @@
 body {
   margin: 0;
-
 }
+
+.toastorg {
+  font-size: 100px;
+}
+
+.main-eval h1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-eval h2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-eval h3{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.eval-levels {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 25px;
+}
+
+.start-firstName {
+  font-size: 23px;
+  padding-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.start-firstName2 {
+  font-size: 23px;
+  padding-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.start-lastName {
+  font-size: 23px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.start-speechTitle {
+  font-size: 23px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.eval-sect {
+  margin-left: 20px;
+  margin-bottom: 5px;
+  padding: 10px;
+  display: flex;
+}
+.eval-sect2 {
+  margin-left: 20px;
+  margin-bottom: 5px;
+  padding: 10px;
+  display: flex;
+}
+
+.flex-container {
+  font-size: 20px;
+  padding: 5rem;
+  justify-content: space-evenly;
+  display:flex;
+  flex-direction: row;
+}
+.flex-container2 {
+  font-size: 20px;
+  padding: 5px;
+  justify-content: space-evenly;
+  display:flex;
+  flex-direction: row;
+}
+
+.subnext {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  
+}
+.subnext2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  
+}
+
+.subbtn {
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nextbtn {
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.subbtn2 {
+  display: block;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nextbtn2 {
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
 
 

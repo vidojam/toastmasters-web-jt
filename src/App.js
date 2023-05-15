@@ -4,6 +4,7 @@ import Home from "./scenes/Home.jsx";
 import EvaluationEntries from "./scenes/Eval-Entries.jsx"
 import EvalRecaps from "./scenes/Indiv-Recap.jsx"
 import ClubAvgs from './scenes/ClubAvgs.jsx';
+import "./App.css"
 // import Login from "./scenes/Login.jsx";
 // import SignUp from "./scenes/Signup.jsx";
 

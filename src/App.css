@@ -2,8 +2,30 @@ body {
   margin: 0;
 }
 
+#home h1 {
+  font-size: 100px
+}
+
 .toastorg {
-  font-size: 100px;
+  font-size: 30px;
+}
+
+.homeimg {
+  display: block;
+  width:70%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.homebtn {
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .main-eval h1{

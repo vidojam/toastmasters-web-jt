@@ -18,12 +18,12 @@ export default function App() {
     <>  
     <BrowserRouter>
     <div className="App">
-        <header className="App-header">
+        <header className="app-header">
           <nav>
             <Link to="/" className='App-link'>Home</Link> |&nbsp; 
             <Link to="/Eval-Entries" className='App-link'>Evaluation Entries</Link> |&nbsp; 
             <Link to="/Indiv-Recap" className='App-link'>Individual Evaluations</Link> |&nbsp; 
-            <Link to="/Club-Avg" className='App-link'>Club Averages</Link> |&nbsp; 
+            {/* <Link to="/Club-Avg" className='App-link'>Club Averages</Link> |&nbsp;  */}
             <Link to="/About" className='App-link'>About</Link>  
             {/* <Link to="/login" className='App-link'>Login</Link> |&nbsp; 
             <Link to="/signup" className='App-link'>Sign Up</Link> */}
@@ -33,7 +33,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/Eval-Entries" element={<EvaluationEntries />} />
           <Route path="/Indiv-Recap" element={<EvalRecaps  />} />
-          <Route path="/Club-Avgs" element={<ClubAvgs />} />
+          {/* <Route path="/Club-Avgs" element={<ClubAvgs />} /> */}
           <Route path="/about" element={<About />} /> 
             {/* <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} /> */}

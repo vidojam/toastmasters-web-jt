@@ -15,6 +15,7 @@ export default function EvalEntries () {
   const [engagesAudience, setEngagesAudience] = useState('');
   const [comfortLevel, setComfortLevel] = useState('')
   const [evalAverage, setEvalAverage ] =useState('')
+  
   const navigate = useNavigate();
 
   //TODO!!!
@@ -46,6 +47,8 @@ export default function EvalEntries () {
     })
     .catch(alert)
   }
+
+
 
 
   return (
@@ -181,7 +184,9 @@ export default function EvalEntries () {
 
           <br />
           <div className="subnext">
+          
             <input className="subbtn" type="submit" value="Submit" />
+
             <button className="nextbtn" onClick={ () => navigate("/Indiv-Recap") } >Next</button>
           </div>
 

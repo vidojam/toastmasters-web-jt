@@ -7,6 +7,7 @@ export default function IndivRecap() {
   const [searchResult, setSearchResult] = useState([]);
 
   const navigate = useNavigate();
+  
 
   useEffect(() => {
     fetch(`https://api-toastmasters-jt.web.app/evals/search/${searchFirstName}`)

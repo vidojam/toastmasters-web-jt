@@ -63,8 +63,8 @@ export default function EvalEntries () {
           <label className="start-firstName" htmlFor="firstName">First Name
           <input 
             type="text"
-            pattern="[A-z]"
-            oninput="this.value = this.value.toUpperCase()"
+            // pattern="[A-z]"
+            // oninput="this.value = this.value.toUpperCase()"
             value={firstName}
             onChange={ (e)=> { setFirstName(e.target.value)}} />
         </label>

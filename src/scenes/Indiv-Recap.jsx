@@ -26,9 +26,6 @@ export default function IndivRecap() {
           <label className="start-firstName2" htmlFor="firstName">First Name
             <input
               type="text"
-              pattern="[A-z]*"
-              oninput="this.value = this.value.toUpperCase()"
-              onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charcode > 96 && event.charcode < 123)"
               placeholder="First Name"
               value={searchFirstName}
               onChange={(e) => { setSearchFirstName(e.target.value) }} />

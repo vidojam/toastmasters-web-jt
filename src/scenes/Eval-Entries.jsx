@@ -28,9 +28,7 @@ export default function EvalEntries () {
     fetch("https://api-toastmasters-jt.web.app/evals", {
       method: "POST",
       headers: { "Content-Type": "application/json",
-     
     },
-      
       body: JSON.stringify( {firstName, lastName, speechTitle, clarity,vocalVariety, eyeContact, gestures, engagesAudience, comfortLevel, evalAverage} )
 
     })
@@ -171,16 +169,13 @@ export default function EvalEntries () {
                 max="5"
                 value ={"average"} // test number for db - evalAverage variable
                 onChange={ (e)=> { setEvalAverage(e.target.value)}} />
-              
             </label>
-
           </div>
 
           <br />
-          <div className="subnext">
           
+          <div className="subnext">
             <input className="subbtn" type="submit" value="Submit"  />
-
             <button className="nextbtn" onClick={ () => navigate("/Indiv-Recap") } >Next</button>
           </div>
 

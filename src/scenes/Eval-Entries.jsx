@@ -173,9 +173,10 @@ export default function EvalEntries () {
           </div>
 
           <br />
-          
+
           <div className="subnext">
-            <input className="subbtn" type="submit" value="Submit"  />
+            <input className="subbtn" type="submit" value="Submit" o
+             />
             <button className="nextbtn" onClick={ () => navigate("/Indiv-Recap") } >Next</button>
           </div>
 

@@ -1,9 +1,8 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import About from './scenes/About.js';
 import Home from "./scenes/Home.jsx";
-import EvaluationEntries from "./scenes/Eval-Entries.jsx"
 import EvalRecaps from "./scenes/Indiv-Recap.jsx"
-import ClubAvgs from './scenes/ClubAvgs.jsx';
+import EvalEntries from './scenes/Eval-Entries.jsx';
 import "./App.css"
 // import Login from "./scenes/Login.jsx";
 // import SignUp from "./scenes/Signup.jsx";
@@ -31,9 +30,8 @@ export default function App() {
           <Routes>
           
           <Route path="/" element={<Home />} />
-          <Route path="/Eval-Entries" element={<EvaluationEntries />} />
+          <Route path="/Eval-Entries" element={<EvalEntries />} />
           <Route path="/Indiv-Recap" element={<EvalRecaps  />} />
-          {/* <Route path="/Club-Avgs" element={<ClubAvgs />} /> */}
           <Route path="/about" element={<About />} /> 
             {/* <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} /> */}

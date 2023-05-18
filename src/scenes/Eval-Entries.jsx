@@ -18,10 +18,8 @@ export default function EvalEntries () {
   
   const navigate = useNavigate();
 
-  //TODO!!!
-  // onSubmit...clear text boxes  
 
-  // const arr = [clarity, eyeContact, gestures, vocalVariety, engagesAudience, comfortLevel]  
+  
   
   const handleAddEval = (e) => {
     e.preventDefault();

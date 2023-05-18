@@ -49,14 +49,12 @@ export default function EvalEntries () {
   }
 
 
-
-
   return (
     <>
     <main>
       <div className="main-eval">
         <h1>Evaluation Assistant</h1>
-        <h2>Enter Evaluation Levels</h2>
+        {/* <h2>Enter Evaluation Levels</h2> */}
         <h3 className="eval-levels">5 - Excellent | 4 - Very Good | 3 - Good | 2 - Need Practice | 1 - Need A Trainer</h3>
       </div>
      
@@ -66,8 +64,6 @@ export default function EvalEntries () {
           <label className="start-firstName" htmlFor="firstName">First Name
           <input 
             type="text"
-            // pattern="[A-z]"
-            // oninput="this.value = this.value.toUpperCase()"
             value={firstName}
             onChange={ (e)=> { setFirstName(e.target.value)}} />
         </label>
@@ -90,7 +86,7 @@ export default function EvalEntries () {
 
       <br />
           <div class="flex-container">
-            <label htmlFor="clarity">Clarity of Speech
+            <label htmlFor="clarity"> Clarity of Speech
               <input 
                 className="eval-sect" 
                 id="clarity" 
@@ -105,7 +101,7 @@ export default function EvalEntries () {
             <br />
 
             <label 
-            htmlFor="vocalVariety">Vocal Variety
+            htmlFor="vocalVariety"> Vocal Variety
               <input 
                 className="eval-sect" 
                 type="number"
@@ -117,7 +113,7 @@ export default function EvalEntries () {
             
             <br />
 
-            <label className="eyeContact" id="eyeContact" htmlFor="eyeContact">Eye Contact
+            <label className="eyeContact" id="eyeContact" htmlFor="eyeContact"> Eye Contact
               <input
                 className="eval-sect" 
                 id="eyeContact"
@@ -129,7 +125,7 @@ export default function EvalEntries () {
             </label>
 
             <br />
-            <label className="gestures" id="gestures" htmlFor="gestures">Uses Gestures
+            <label className="gestures" id="gestures" htmlFor="gestures"> Uses Gestures
               <input 
                 className="eval-sect" 
                 id="gestures"
@@ -141,7 +137,7 @@ export default function EvalEntries () {
             </label>
             
             <br />
-            <label htmlFor="engagesAudience">Engages Audience
+            <label htmlFor="engagesAudience"> Engages Audience
               <input 
                 className="eval-sect" 
                 id="engagesAudience"  
@@ -154,7 +150,7 @@ export default function EvalEntries () {
             
             <br />
 
-            <label htmlFor="comfortLevel">Comfort Level
+            <label htmlFor="comfortLevel"> Comfort Level
               <input
                 className="eval-sect" 
                 id="comfortLevel"
@@ -167,7 +163,7 @@ export default function EvalEntries () {
 
             <br />
 
-            <label htmlFor="evalAverage">Evaluation Average
+            <label htmlFor="evalAverage"> Evaluation Average
 
               <input
                 className="eval-sect" 
@@ -185,14 +181,14 @@ export default function EvalEntries () {
           <br />
           <div className="subnext">
           
-            <input className="subbtn" type="submit" value="Submit" />
+            <input className="subbtn" type="submit" value="Submit"  />
 
             <button className="nextbtn" onClick={ () => navigate("/Indiv-Recap") } >Next</button>
           </div>
 
         </form>
 
-      </section>
+      </section >
       {Footer()}
     </main>
    

@@ -1,6 +1,7 @@
 body {
   margin: 0;
-  background-color: mediumaquamarine;
+  /* background-color: mediumaquamarine; */
+  background-image: url("../image/bkwh3.jpg")
 }
 
 /* Home Page */

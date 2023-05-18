@@ -21,7 +21,6 @@ export default function IndivRecap() {
   return (
     <>
       <h1>Individual Evaluation History:</h1>
-
       <main>
         <form>
           <label className="start-firstName2" htmlFor="firstName">First Name
@@ -35,9 +34,6 @@ export default function IndivRecap() {
               onChange={(e) => { setSearchFirstName(e.target.value) }} />
           </label>
 
-          <br />
-
-        
           {searchResult.length > 0 && (
             <div>
               {searchResult.map((evals) => {
@@ -62,7 +58,6 @@ export default function IndivRecap() {
             <input className="subbtn2" type="submit" value="Submit" />
             <button className="nextbtn2" onClick={() => navigate("/")}>Go to Home</button>
           </div>
-
         </form>
         {Footer()}
       </main>

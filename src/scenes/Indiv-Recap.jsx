@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Footer from "./Footer";
+// import Footer from "./Footer";
 
 export default function IndivRecap() {
   const [searchFirstName, setSearchFirstName] = useState('');
@@ -59,7 +59,7 @@ export default function IndivRecap() {
             <button className="nextbtn2" onClick={() => navigate("/")}>Go to Home</button>
           </div>
         </form>
-        {Footer()}
+        {/* {Footer()} */}
       </main>
     
     </>

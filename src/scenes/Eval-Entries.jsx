@@ -14,22 +14,21 @@ export default function EvalEntries () {
   const [vocalVariety, setVocalVariety] = useState('');
   const [engagesAudience, setEngagesAudience] = useState('');
   const [comfortLevel, setComfortLevel] = useState('')
-  const [evalAverage, setEvalAverage ] =useState('')
+  const [evalAverage, setEvalAverage ] = useState('')
+
   
   const navigate = useNavigate();
 
-
-  
-  
   const handleAddEval = (e) => {
     e.preventDefault();
-
   
+
     fetch("https://api-toastmasters-jt.web.app/evals", {
+      
       method: "POST",
       headers: { "Content-Type": "application/json",
     },
-      body: JSON.stringify( {firstName, lastName, speechTitle, clarity,vocalVariety, eyeContact, gestures, engagesAudience, comfortLevel, evalAverage} )
+      body: JSON.stringify( {firstName, lastName, speechTitle, clarity,vocalVariety, eyeContact, gestures, engagesAudience, comfortLevel} )
 
     })
     .then(resp => resp.json())
@@ -45,23 +44,42 @@ export default function EvalEntries () {
   }
 
 
+  function addSixEvals(clarity, eyeContact, gestures, vocalVariety, engagesAudience, comfortLevel ) {
+    const intClarity = Number(clarity)
+    const intEyeContact = Number(eyeContact)
+    const intGestures = Number(gestures)
+    const intVocalVariety = Number(vocalVariety)
+    const intEngagesAudience = Number(engagesAudience)
+    const intComfortLevel = Number(comfortLevel)
+
+    const sum = intClarity + intEyeContact + intGestures + intVocalVariety +  intEngagesAudience + intComfortLevel;
+    const res = sum/6;
+    return res.toFixed(2);
+  }
+
+  const result = addSixEvals(clarity, eyeContact, gestures, vocalVariety, engagesAudience, comfortLevel);
+  console.log(result)
+
+    
   return (
     <>
     <main>
       <div className="main-eval">
         <h1>Evaluation Assistant</h1>
-        {/* <h2>Enter Evaluation Levels</h2> */}
         <h3 className="eval-levels">5 - Excellent | 4 - Very Good | 3 - Good | 2 - Need Practice | 1 - Need A Trainer</h3>
       </div>
      
         <section className="start-main">
           <form onSubmit={handleAddEval}>
-
+         
+        
           <label className="start-firstName" htmlFor="firstName">First Name
           <input 
             type="text"
             value={firstName}
+            firstName={firstName}
             onChange={ (e)=> { setFirstName(e.target.value)}} />
+          
         </label>
         
         <br />
@@ -160,22 +178,14 @@ export default function EvalEntries () {
             <br />
 
             <label htmlFor="evalAverage"> Evaluation Average
-
-              <input
-                className="eval-sect" 
-                id="evalAverage"
-                type="number" 
-                min="0"
-                max="5"
-                value ={"average"} // test number for db - evalAverage variable
-                onChange={ (e)=> { setEvalAverage(e.target.value)}} />
+              <h3>{result}</h3> 
             </label>
           </div>
 
           <br />
 
           <div className="subnext">
-            <input className="subbtn" type="submit" value="Submit" o
+            <input className="subbtn" type="submit" value="Submit" 
              />
             <button className="nextbtn" onClick={ () => navigate("/Indiv-Recap") } >Next</button>
           </div>
@@ -184,10 +194,9 @@ export default function EvalEntries () {
 
       </section >
       {Footer()}
-    </main>
-   
+    </main>  
     </>
   )
 }
 
-
+  

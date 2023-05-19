@@ -24,13 +24,11 @@ export default function App() {
             <Link to="/Indiv-Recap" className='App-link'>Individual Evaluations</Link> |&nbsp; 
             <Link to="/About" className='App-link'>About</Link>  
           </nav>
-          <Routes>
-          
+          <Routes>    
             <Route path="/" element={<Home />} />
             <Route path="/Eval-Entries" element={<EvalEntries />} />
             <Route path="/Indiv-Recap" element={<EvalRecaps  />} />
             <Route path="/about" element={<About />} /> 
-           
           </Routes>
         
         </header>

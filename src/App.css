@@ -5,8 +5,11 @@ body {
   /* background-image: linear-gradient(right red,yellow); */
 }
 
-/* Home Page */
+input[type="text"] {
+  text-transform: lowercase;
+}
 
+/* Home Page */
 .app-header {
   padding: 0.75em;
   font-size: 20px;
@@ -27,8 +30,8 @@ body {
 
 .homeimg {
   margin: 0 auto;
-  width:70%;
-  height: 40%;
+  width:60%;
+  height: 30%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -127,8 +130,9 @@ body {
 .eval-sect2 {
   margin-left: 20px;
   margin-bottom: 5px;
-  padding: 10px;
+  padding: 1px;
   display: flex;
+  justify-content: space-around;
 } 
 
 
@@ -138,7 +142,7 @@ body {
   justify-content: space-evenly;
   display:flex;
   flex-direction: row;
-}
+} 
 
 
 .subnext2 {
@@ -165,6 +169,13 @@ body {
 
 /* About Page */
 
+.flex-container2 {
+  font-size: 20px;
+  padding: 5rem;
+  justify-content: space-between;
+  display:flex;
+  flex-direction: row;
+}
 .abouttitle {
   margin: 0 auto;
   padding: 0.75em;
@@ -173,7 +184,7 @@ body {
 
 .aboutimg {
   margin: 0 auto;
-  width: 55%;
+  width: 45%;
   height: 30%;
   display: flex;
   justify-content: center;
@@ -199,15 +210,15 @@ body {
   text-align: center;
 }
 
-div {
+/* div {
   width: 100%;
   height: 100%;
   border: 5px solid black;
   background: rgb(244, 230, 250);
   display: inline-block;
-} 
+}  */
 
-example1 {
+.example1 {
   height: 50px;	
   overflow: hidden;
   position: relative;

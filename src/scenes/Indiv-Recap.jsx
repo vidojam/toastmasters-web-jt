@@ -5,9 +5,8 @@ import { useEffect, useState } from "react";
 export default function IndivRecap() {
   const [searchFirstName, setSearchFirstName] = useState('');
   const [searchResult, setSearchResult] = useState([]);
-
   const navigate = useNavigate();
-  
+  const [inputValue, setInputValue] = useState('');
 
   useEffect(() => {
     fetch(`https://api-toastmasters-jt.web.app/evals/search/${searchFirstName}`)
@@ -22,7 +21,7 @@ export default function IndivRecap() {
     <>
       <h1>Individual Evaluation History:</h1>
       <main>
-        <form>
+        <form >
           <label className="start-firstName2" htmlFor="firstName">First Name
             <input
               type="text"
@@ -35,9 +34,10 @@ export default function IndivRecap() {
             <div>
               {searchResult.map((evals) => {
                 return (
-                  <div class="flex-container">
-                    <div className="eval-sect" classname="result" key={evals._id}>
-                      <h3>Speech Title: {evals.speechTitle}</h3>
+                  <div>
+                    <div className="eval-sect2" classname="result" key={evals._id}>
+                      <h3>Speech Title:{evals.speechTitle}</h3>
+                     
                       <h4>Clarity: {evals.clarity}</h4>
                       <h4>Vocal Variety: {evals.vocalVariety}</h4>
                       <h4>Eye Contact: {evals.eyeContact}</h4>

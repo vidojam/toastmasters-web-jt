@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Footer from "./Footer";
 
 
 export default function IndivRecap() {
@@ -38,7 +37,7 @@ export default function IndivRecap() {
                   <div>
                     <div className="eval-sect2" classname="result" key={evals._id}>
                       <h3>Speech Title:{evals.speechTitle}</h3>
-                     
+                     <br />
                       <h4>Clarity: {evals.clarity}</h4>
                       <h4>Vocal Variety: {evals.vocalVariety}</h4>
                       <h4>Eye Contact: {evals.eyeContact}</h4>
@@ -58,7 +57,6 @@ export default function IndivRecap() {
           </div>
   
         </form>
-        {Footer()}
       </main>
     
     </>

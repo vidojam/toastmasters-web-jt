@@ -4,6 +4,8 @@ import Home from "./scenes/Home.jsx";
 import EvalRecaps from "./scenes/Indiv-Recap.jsx"
 import EvalEntries from './scenes/Eval-Entries.jsx';
 import "./App.css"
+import Footer from './scenes/Footer.jsx';
+import Banner from "./scenes/Banner.jsx"
 
 
 
@@ -34,6 +36,8 @@ export default function App() {
         </header>
       </div>
     </BrowserRouter>
+    <Banner />
+    <Footer/>
     </>
   );
 }

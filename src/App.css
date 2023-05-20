@@ -5,10 +5,11 @@ body {
   /* background-image: linear-gradient(right red,yellow); */
 }
 
-/* convert character entries to lower case */
-input[type="text"] {
-  text-transform: lowercase;
-  text-transform: uppercase;
+
+/* home page */
+
+.box img {
+  object-fit: cover;
 }
 
 .app-header {
@@ -20,6 +21,9 @@ input[type="text"] {
   margin: 0 auto;
   padding: .55em;
   text-align: center;
+  background: linear-gradient(to right, rgb(143, 67, 205), rgb(25, 75, 81));
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent;
 }
 
 .toastorg {
@@ -31,8 +35,8 @@ input[type="text"] {
 
 .homeimg {
   margin: 0 auto;
-  width:60%;
-  height: 30%;
+  width: 60%;
+  height: 40%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,6 +53,12 @@ input[type="text"] {
 }
 
 /* Eval Page */
+
+/* convert character entries to lower case */
+input[type="text"] {
+  text-transform: lowercase;
+  text-transform: uppercase;
+}
 
 .main-eval h1, h2, h3{
   display: flex;
@@ -91,16 +101,18 @@ input[type="text"] {
 
 .flex-container {
   font-size: 20px;
-  padding: 5rem;
-  justify-content: space-evenly;
+  /* padding: 5rem; */
+  padding-top: 50px;
+  justify-content: space-between;
   display:flex;
   flex-direction: row;
 }
 
 .eval-sect {
+  font-size:larger;
   margin-left: 20px;
-  margin-bottom: 5px;
-  padding: 10px;
+  margin-bottom: 10px;
+  padding: 5px;
   display: flex;
 }
 

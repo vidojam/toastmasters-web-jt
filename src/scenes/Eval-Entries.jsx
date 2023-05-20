@@ -1,6 +1,5 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
-import Footer from "./Footer.jsx";
 
 
 export default function EvalEntries () {
@@ -14,15 +13,26 @@ export default function EvalEntries () {
   const [vocalVariety, setVocalVariety] = useState('');
   const [engagesAudience, setEngagesAudience] = useState('');
   const [comfortLevel, setComfortLevel] = useState('')
- 
 
-  
+  const fields = {
+    firstName,
+    lastName,
+    speechTitle,
+    clarity,
+    eyeContact,
+    gestures,
+    vocalVariety,
+    engagesAudience,
+    comfortLevel
+  }
+
+  const [evalFields, setEvalFields] = useState(fields)
+ 
   const navigate = useNavigate();
 
   const handleAddEval = (e) => {
     e.preventDefault();
   
-
     fetch("https://api-toastmasters-jt.web.app/evals", {
       
       method: "POST",
@@ -35,10 +45,11 @@ export default function EvalEntries () {
     .then(data => {
       if(data.message) { 
         alert(data.message) 
-        return 
+        // setEvalFields(data)
+        setFirstName("")
       }
       eval(data);
-      navigate("/");
+      // navigate("/");
     })
     .catch(alert)
   }
@@ -97,6 +108,7 @@ export default function EvalEntries () {
               value={speechTitle}
               onChange={ (e)=> { setSpeechTitle(e.target.value)}} />
           </label>
+      
         </div>  
       <br />
           <div class="flex-container">
@@ -176,21 +188,18 @@ export default function EvalEntries () {
             </label>
 
             <br />
-
             <label className = "average" htmlFor="evalAverage"> Evaluation Average
               <h3>{result}</h3> 
             </label>
           </div>
-
-          <br />
-
-          <div className="subnext">
+            <br />
+            <div className="subnext">
             <input className="subbtn" type="submit" value="Submit" />
             <button className="nextbtn" onClick={ () => navigate("/Indiv-Recap") } >Next</button>
           </div>
+
         </form>
       </section >
-      {Footer()}
     </main>  
     </>
   )

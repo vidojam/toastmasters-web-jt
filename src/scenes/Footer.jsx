@@ -7,7 +7,7 @@ export default function Footer() {
     <footer>
       <Container>
         <Row>
-          <Col className="text-center">
+          <Col>
           <p>&copy; {currentYear} Jose Torres
           <br/>
           <a href={gitHubUrl}

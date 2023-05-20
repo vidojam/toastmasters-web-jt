@@ -5,11 +5,12 @@ body {
   /* background-image: linear-gradient(right red,yellow); */
 }
 
+/* convert character entries to lower case */
 input[type="text"] {
   text-transform: lowercase;
+  text-transform: uppercase;
 }
 
-/* Home Page */
 .app-header {
   padding: 0.75em;
   font-size: 20px;
@@ -105,6 +106,7 @@ input[type="text"] {
 
 .subnext {
   display: flex;
+  padding-top: 25px;
   justify-content: center;
   align-items: center;
   font-size: 50px;
@@ -112,14 +114,14 @@ input[type="text"] {
 }
 
 .subbtn {
-  font-size: 25px;
+  font-size: 22px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .nextbtn {
-  font-size: 25px;
+  font-size: 22px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -147,6 +149,8 @@ input[type="text"] {
 
 .subnext2 {
   display: flex;
+  padding-top: 27%;
+  position: relative;
   justify-content: center;
   align-items: center;
   font-size: 50px;
@@ -155,13 +159,13 @@ input[type="text"] {
 
 .subbtn2 {
   display: block;
-  font-size: 25px;
+  font-size: 22px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .nextbtn2 {
-  font-size: 25px;
+  font-size: 22px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -203,7 +207,8 @@ input[type="text"] {
 
 .aboutbtn {
   margin: 0 auto;
-  font-size: 25px;
+  font-size: 22px;
+  margin-top:  20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -225,7 +230,7 @@ input[type="text"] {
  }
  .example1 h3 {
   font-size: 3em;
-  color: darkblue;
+  color: black;
   position: absolute;
   width: 100%;
   height: 100%;

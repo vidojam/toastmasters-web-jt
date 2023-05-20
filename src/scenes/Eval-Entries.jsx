@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
-import Footer from "./Footer";
+import Footer from "./Footer.jsx";
 
 
 export default function EvalEntries () {
@@ -14,7 +14,7 @@ export default function EvalEntries () {
   const [vocalVariety, setVocalVariety] = useState('');
   const [engagesAudience, setEngagesAudience] = useState('');
   const [comfortLevel, setComfortLevel] = useState('')
-  const [evalAverage, setEvalAverage ] = useState('')
+ 
 
   
   const navigate = useNavigate();
@@ -71,33 +71,33 @@ export default function EvalEntries () {
      
         <section className="start-main">
           <form onSubmit={handleAddEval}>
-         
-        
-          <label className="start-firstName" htmlFor="firstName">First Name
-          <input 
-            type="text"
-            value={firstName}
-            firstName={firstName}
-            onChange={ (e)=> { setFirstName(e.target.value)}} />
+          <div nfl>
+            <label className="start-firstName" htmlFor="firstName">First Name
+            <input 
+              type="text"
+              value={firstName}
+              firstName={firstName}
+              onChange={ (e)=> { setFirstName(e.target.value)}} />
+            
+          </label>
           
-        </label>
-        
-        <br />
-        <label className="start-lastName" htmlFor="lastName">Last Name
-          <input 
-            type="text"
-            value={lastName}
-            onChange={ (e)=> { setLastName(e.target.value)}} />
-        </label>
-        
-        <br />
+          <br />
+          <label className="start-lastName" htmlFor="lastName">Last Name
+            <input 
+              type="text"
+              value={lastName}
+              onChange={ (e)=> { setLastName(e.target.value)}} />
+          </label>
+          
+          <br />
 
-        <label className="start-speechTitle" htmlFor="speechTitle">Speech Title
-          <input
-            value={speechTitle}
-            onChange={ (e)=> { setSpeechTitle(e.target.value)}} />
-        </label>
-
+          <label className="start-speechTitle" htmlFor="speechTitle">Speech Title
+            <input
+              type="text"
+              value={speechTitle}
+              onChange={ (e)=> { setSpeechTitle(e.target.value)}} />
+          </label>
+        </div>  
       <br />
           <div class="flex-container">
             <label htmlFor="clarity"> Clarity of Speech
@@ -177,7 +177,7 @@ export default function EvalEntries () {
 
             <br />
 
-            <label htmlFor="evalAverage"> Evaluation Average
+            <label className = "average" htmlFor="evalAverage"> Evaluation Average
               <h3>{result}</h3> 
             </label>
           </div>
@@ -185,13 +185,10 @@ export default function EvalEntries () {
           <br />
 
           <div className="subnext">
-            <input className="subbtn" type="submit" value="Submit" 
-             />
+            <input className="subbtn" type="submit" value="Submit" />
             <button className="nextbtn" onClick={ () => navigate("/Indiv-Recap") } >Next</button>
           </div>
-
         </form>
-
       </section >
       {Footer()}
     </main>  

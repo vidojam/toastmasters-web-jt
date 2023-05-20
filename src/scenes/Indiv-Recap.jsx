@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import Footer from "./Footer";
 
 
 export default function IndivRecap() {
@@ -55,7 +56,9 @@ export default function IndivRecap() {
             <input className="subbtn2" type="submit" value="Submit" />
             <button className="nextbtn2" onClick={() => navigate("/")}>Go to Home</button>
           </div>
+  
         </form>
+        {Footer()}
       </main>
     
     </>

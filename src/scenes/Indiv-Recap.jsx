@@ -19,7 +19,7 @@ export default function IndivRecap() {
 
   return (
     <>
-      <h1>Individual Evaluation History:</h1>
+      <h1 className="indivTitle" >Individual Evaluation History</h1>
       <main>
         <form >
           <label className="start-firstName2" htmlFor="firstName">First Name

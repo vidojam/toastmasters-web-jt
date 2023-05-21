@@ -10,7 +10,7 @@ body {
 
 .box img {
   object-fit: cover;
-}
+} 
 
 .app-header {
   padding: 0.75em;
@@ -21,7 +21,7 @@ body {
   margin: 0 auto;
   padding: .55em;
   text-align: center;
-  background: linear-gradient(to right, rgb(143, 67, 205), rgb(25, 75, 81));
+  background: linear-gradient(to right, rgb(143, 67, 205), rgb(229, 124, 222));
   -webkit-background-clip: text; 
   -webkit-text-fill-color: transparent;
 }
@@ -35,7 +35,7 @@ body {
 
 .homeimg {
   margin: 0 auto;
-  width: 60%;
+  width: 50%;
   height: 40%;
   display: flex;
   justify-content: center;
@@ -59,6 +59,13 @@ input[type="text"] {
   text-transform: lowercase;
   text-transform: uppercase;
 }
+
+.evalTitle {
+  background: linear-gradient(to right, rgb(143, 67, 205), rgb(229, 124, 222));
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent;
+}
+  
 
 .main-eval h1, h2, h3{
   display: flex;
@@ -141,6 +148,12 @@ input[type="text"] {
 
 /* Indivual Recap Page */
 
+.indivTitle {
+  background: linear-gradient(to right, rgb(143, 67, 205), rgb(229, 124, 222));
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent;
+}
+
 .eval-sect2 {
   margin-left: 20px;
   margin-bottom: 5px;
@@ -196,6 +209,9 @@ input[type="text"] {
   margin: 0 auto;
   padding: 0.75em;
   text-align: center;
+  background: linear-gradient(to right, rgb(74, 25, 114), rgb(229, 124, 222));
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent;
 }
 
 .aboutimg {
@@ -221,19 +237,18 @@ input[type="text"] {
   margin: 0 auto;
   font-size: 22px;
   margin-top:  20px;
-  display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 
-/* div {
+div {
   width: 100%;
   height: 100%;
-  border: 5px solid black;
+  border: 3px solid black;
   background: rgb(244, 230, 250);
   display: inline-block;
-}  */
+} 
 
 .example1 {
   height: 50px;	
@@ -241,7 +256,7 @@ input[type="text"] {
   position: relative;
  }
  .example1 h3 {
-  font-size: 3em;
+  font-size: 2em;
   color: black;
   position: absolute;
   width: 100%;
@@ -279,6 +294,106 @@ input[type="text"] {
   transform: translateX(-100%); 
   }
  }
+
+
+
+  @keyframes color {
+  0%   { background: #33CCCC; }
+  20%  { background: #33CC36; }
+  40%  { background: #B8CC33; }
+  60%  { background: #FCCA00; }
+  80%  { background: #33CC36; }
+  100% { background: #33CCCC; }
+}
+
+body {
+  background: #33CCCC; /* Fallback */
+  animation: color 9s infinite linear;
+  text-align: center;
+  padding: 2em;
+}
+h1 {
+  text-align: center;
+  font-family: 'Kavoon', sans-serif;
+  font-size: 2.5em;
+  color: white;
+} 
+
+/* ************** */
+
+/* *{
+  margin: 0;
+  padding: 0;
+}
+section{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #3586ff;
+  overflow: hidden;
+}
+section .air{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url(https://1.bp.blogspot.com/-xQUc-TovqDk/XdxogmMqIRI/AAAAAAAACvI/AizpnE509UMGBcTiLJ58BC6iViPYGYQfQCLcBGAsYHQ/s1600/wave.png);
+  background-size: 1000px 100px
+}
+section .air.air1{
+  animation: wave 30s linear infinite;
+  z-index: 1000;
+  opacity: 1;
+  animation-delay: 0s;
+  bottom: 0;
+}
+section .air.air2{
+  animation: wave2 15s linear infinite;
+  z-index: 999;
+  opacity: 0.5;
+  animation-delay: -5s;
+  bottom: 10px;
+}
+section .air.air3{
+  animation: wave 30s linear infinite;
+  z-index: 998;
+  opacity: 0.2;
+  animation-delay: -2s;
+  bottom: 15px;
+}
+section .air.air4{
+  animation: wave2 5s linear infinite;
+  z-index: 997;
+  opacity: 0.7;
+  animation-delay: -5s;
+  bottom: 20px;
+}
+@keyframes wave{
+  0%{
+    background-position-x: 0px; 
+  }
+  100%{
+    background-position-x: 1000px; 
+  }
+}
+@keyframes wave2{
+  0%{
+    background-position-x: 0px; 
+  }
+  100%{
+    background-position-x: -1000px; 
+  }
+} */
+
+
+
+
+
+
+
+
+
 
 
  

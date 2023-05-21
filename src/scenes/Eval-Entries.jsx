@@ -14,19 +14,6 @@ export default function EvalEntries () {
   const [engagesAudience, setEngagesAudience] = useState('');
   const [comfortLevel, setComfortLevel] = useState('')
 
-  const fields = {
-    firstName,
-    lastName,
-    speechTitle,
-    clarity,
-    eyeContact,
-    gestures,
-    vocalVariety,
-    engagesAudience,
-    comfortLevel
-  }
-
-  const [evalFields, setEvalFields] = useState(fields)
  
   const navigate = useNavigate();
 
@@ -43,13 +30,20 @@ export default function EvalEntries () {
     })
     .then(resp => resp.json())
     .then(data => {
-      if(data.message) { 
-        alert(data.message) 
-        // setEvalFields(data)
+      // if(data.message) { 
+      //   alert(data.message) 
         setFirstName("")
-      }
+        setLastName("")
+        setSpeechTitle("")
+        setClarity("")
+        setVocalVariety("")
+        setEyeContact("")
+        setGestures("")
+        setEngagesAudience("")
+        setComfortLevel("")
+      // }
       eval(data);
-      // navigate("/");
+    
     })
     .catch(alert)
   }
@@ -75,9 +69,10 @@ export default function EvalEntries () {
   return (
     <>
     <main>
-      <div className="main-eval">
-        <h1>Evaluation Assistant</h1>
-        <h3 className="eval-levels">5 - Excellent | 4 - Very Good | 3 - Good | 2 - Need Practice | 1 - Need A Trainer</h3>
+      
+        <h1 className="evalTitle">Evaluation Assistant</h1>
+        <div className="main-eval">
+          <h3 className="eval-levels">5 - Excellent | 4 - Very Good | 3 - Good | 2 - Need Practice | 1 - Need A Trainer</h3>
       </div>
      
         <section className="start-main">

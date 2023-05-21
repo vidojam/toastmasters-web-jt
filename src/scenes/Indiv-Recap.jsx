@@ -6,7 +6,7 @@ export default function IndivRecap() {
   const [searchFirstName, setSearchFirstName] = useState('');
   const [searchResult, setSearchResult] = useState([]);
   const navigate = useNavigate();
-  const [inputValue, setInputValue] = useState('');
+  // const [inputValue, setInputValue] = useState('');
 
   useEffect(() => {
     fetch(`https://api-toastmasters-jt.web.app/evals/search/${searchFirstName}`)
@@ -17,11 +17,17 @@ export default function IndivRecap() {
       .catch(error => console.error(error))
   }, [searchFirstName]);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSearchFirstName("")
+    setSearchResult("")
+  }
+
   return (
     <>
-      <h1 className="indivTitle" >Individual Evaluation History</h1>
+      <h1 className="indivTitle">Individual Evaluation History</h1>
       <main>
-        <form >
+        <form onSubmit={handleSubmit}>
           <label className="start-firstName2" htmlFor="firstName">First Name
             <input
               type="text"
@@ -37,7 +43,7 @@ export default function IndivRecap() {
                   <div>
                     <div className="eval-sect2" classname="result" key={evals._id}>
                       <h3>Speech Title:{evals.speechTitle}</h3>
-                     <br />
+                      <br />
                       <h4>Clarity: {evals.clarity}</h4>
                       <h4>Vocal Variety: {evals.vocalVariety}</h4>
                       <h4>Eye Contact: {evals.eyeContact}</h4>
@@ -53,21 +59,11 @@ export default function IndivRecap() {
 
           <div className="subnext2">
             <input className="subbtn2" type="submit" value="Submit" />
-            <button className="nextbtn2" onClick={() => navigate("/")}>Go to Home</button>
+              <button className="nextbtn2" onClick={ () => navigate("/about") } >Next</button>
           </div>
-  
         </form>
       </main>
-    
     </>
-  )
+  );
 }
-
-
-
-    
-
-
-
-
 

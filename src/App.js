@@ -7,13 +7,10 @@ import "./App.css"
 import Footer from './scenes/Footer.jsx';
 import Banner from "./scenes/Banner.jsx"
 
-
-
-
-
 export default function App() {
  
   // const [user, setUser] = useState();
+
 
   return (
     <>  

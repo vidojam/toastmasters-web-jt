@@ -4,7 +4,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
   const gitHubUrl = ""
   return (
-    <footer>
+    <footer className="footer">
       <Container>
         <Row>
           <Col>

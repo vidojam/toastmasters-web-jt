@@ -35,6 +35,7 @@ body {
 }
 
 .homeimg {
+  padding: 50px;
   border-radius: 25px;
   margin: 0 auto;
   width: 50%;
@@ -46,6 +47,8 @@ body {
 }
 
 .homebtn {
+
+  padding: 15px;
   background-color: rgb(90, 248, 5);
   border-radius: 7px;
   margin: 0 auto;
@@ -253,81 +256,20 @@ input[type="text"] {
   margin: 0 auto;
   font-size: 22px;
   margin-top:  20px;
+  display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 
-/* div {
+div {
   width: 100%;
   height: 100%;
   border: 3px solid black;
   background: rgb(244, 230, 250);
   display: inline-block;
-}  */
+} 
 
-.example1 {
-  height: 50px;	
-  overflow: hidden;
-  position: relative;
- }
- .example1 h3 {
-  font-size: 2em;
-  color: black;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  line-height: 50px;
-  text-align: center;
-  /* Starting position */
-  -moz-transform:translateX(100%);
-  -webkit-transform:translateX(100%);	
-  transform:translateX(100%);
-  /* Apply animation to this element */	
-  -moz-animation: example1 15s linear infinite;
-  -webkit-animation: example1 15s linear infinite;
-  animation: example1 15s linear infinite;
- }
- /* Move it (define the animation) */
- @-moz-keyframes example1 {
-  0%   { -moz-transform: translateX(100%); }
-  100% { -moz-transform: translateX(-100%); }
- }
- @-webkit-keyframes example1 {
-  0%   { -webkit-transform: translateX(100%); }
-  100% { -webkit-transform: translateX(-100%); }
- }
- @keyframes example1 {
-  0%   { 
-  -moz-transform: translateX(100%); /* Firefox bug fix */
-  -webkit-transform: translateX(100%); /* Firefox bug fix */
-  transform: translateX(100%); 		
-  }
-  100% { 
-  -moz-transform: translateX(-100%); /* Firefox bug fix */
-  -webkit-transform: translateX(-100%); /* Firefox bug fix */
-  transform: translateX(-100%); 
-  }
- }
-
-
-
-  @keyframes color {
-  0%   { background: #33CCCC; }
-  20%  { background: #33CC36; }
-  40%  { background: #B8CC33; }
-  60%  { background: #FCCA00; }
-  80%  { background: #33CC36; }
-  100% { background: #33CCCC; }
-}
-
-body {
-  background: #33CCCC; /* Fallback */
-  animation: color 9s infinite linear;
-  text-align: center;
-  padding: 2em;
-}
 h1 {
   text-align: center;
   font-family: 'Kavoon', sans-serif;
@@ -336,76 +278,6 @@ h1 {
 } 
 
 /* **************** */
-
-.homeimg {
-  /* animation properties */
-  animation-name: my-animation;
-  animation-duration: 2s;
-  animation-direction: alternate;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  
-  /* other properties */
-  width: 70%;
-  height: 300px;
-  border-radius: 10px;
-  position: relative;
-  left: 0; 
-  right: 0; 
-  margin-left: auto;
-  margin-right: auto; 
-
-}
-
-@keyframes my-animation {
-  from {
-    background-color: #ff7a59;
-    width: 900px;
-    top: 5px;
-  }
-  to {
-    background-color: #33475b;
-    width: 500px;
-    top: 20px;
-  }
-}
-
-
-.aboutimg {
-  /* animation properties */
-  animation-name: my-animation;
-  animation-duration: 2s;
-  animation-direction: alternate;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  
-  /* other properties */
-  width: 70%;
-  height: 300px;
-  border-radius: 10px;
-  position: relative;
-  left: 0; 
-  right: 0; 
-  margin-left: auto;
-  margin-right: auto; 
-
-}
-
-@keyframes my-animation {
-  from {
-    background-color: #ff7a59;
-    width: 900px;
-    top: 5px;
-  }
-  to {
-    background-color: #33475b;
-    width: 500px;
-    top: 20px;
-  }
-}
-
-
-
 
 .abouttitle::before,
 .hometitle::before,

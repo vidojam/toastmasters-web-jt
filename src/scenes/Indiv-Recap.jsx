@@ -28,7 +28,7 @@ export default function IndivRecap() {
       <h1 className="indivTitle">Individual Evaluation History</h1>
       <main>
         <form onSubmit={handleSubmit}>
-          <label className="start-firstName2" htmlFor="firstName">First Name
+          <label className="start-firstName2" htmlFor="firstName">First Name &nbsp;
             <input
               type="text"
               placeholder="First Name"
@@ -42,7 +42,7 @@ export default function IndivRecap() {
                 return (
                   <div>
                     <div className="eval-sect2" classname="result" key={evals._id}>
-                      <h3>Speech Title:{evals.speechTitle}</h3>
+                      <h3>Speech Title:&nbsp;{evals.speechTitle}</h3>
                       <br />
                       <h4>Clarity: {evals.clarity}</h4>
                       <h4>Vocal Variety: {evals.vocalVariety}</h4>

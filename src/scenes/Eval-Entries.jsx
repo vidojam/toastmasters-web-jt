@@ -78,7 +78,8 @@ export default function EvalEntries () {
         <section className="start-main">
           <form onSubmit={handleAddEval}>
           <div nfl>
-            <label className="start-firstName" htmlFor="firstName">First Name
+            <label className="start-firstName" htmlFor="firstName">First Name&nbsp;&nbsp;&nbsp;
+
             <input 
               type="text"
               value={firstName}
@@ -88,7 +89,7 @@ export default function EvalEntries () {
           </label>
           
           <br />
-          <label className="start-lastName" htmlFor="lastName">Last Name
+          <label className="start-lastName" htmlFor="lastName">Last Name&nbsp;&nbsp;&nbsp;
             <input 
               type="text"
               value={lastName}
@@ -97,13 +98,13 @@ export default function EvalEntries () {
           
           <br />
 
-          <label className="start-speechTitle" htmlFor="speechTitle">Speech Title
+          <label className="start-speechTitle" htmlFor="speechTitle">Speech Title&nbsp;
             <input
               type="text"
               value={speechTitle}
               onChange={ (e)=> { setSpeechTitle(e.target.value)}} />
           </label>
-      
+          
         </div>  
       <br />
           <div class="flex-container">

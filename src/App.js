@@ -33,8 +33,8 @@ export default function App() {
         </header>
       </div>
     </BrowserRouter>
-    <Banner />
-    <Footer/>
+    {/* <Banner /> */}
+    {/* <Footer/> */}
     </>
   );
 }

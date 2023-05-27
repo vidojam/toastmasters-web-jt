@@ -142,7 +142,6 @@ input[type="text"] {
   justify-content: center;
   align-items: center;
   font-size: 50px;
-  
 }
 
 .subbtn, .subbtn2 {
@@ -208,6 +207,7 @@ input[type="text"] {
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 .nextbtn2 {
   background-color: rgb(90, 248, 5);

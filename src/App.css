@@ -54,7 +54,7 @@ input[type=text], .subbtn, .nextbtn {
 .homebtn {
 
   padding: 15px;
-  background-color: rgb(90, 248, 5);
+  background-color: rgb(191, 148, 243);
   border-radius: 7px;
   margin: 0 auto;
   font-size: 25px;
@@ -154,7 +154,7 @@ input[type="text"] {
 }
 
 .nextbtn {
-  background-color: rgb(90, 248, 5);
+  background-color: rgb(191, 148, 243);
   border-radius: 7px;
   font-size: 22px;
   display: flex;
@@ -258,7 +258,7 @@ input[type="text"] {
 
 
 .aboutbtn {
-  background-color: rgb(90, 248, 5);
+  background-color: rgb(191, 148, 243);
   border-radius: 10px;
   margin: 0 auto;
   font-size: 22px;

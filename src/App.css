@@ -5,7 +5,7 @@ body {
 }
 
 input[type=text], .subbtn, .nextbtn {
-  background-color: rgb(61, 225, 78);
+  background-color: rgb(191, 148, 243);
   padding: 7px;
   /* border: 2px solid rgb(234, 0, 255); */
   border-radius: 10px;

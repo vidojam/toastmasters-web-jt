@@ -145,7 +145,7 @@ input[type="text"] {
 }
 
 .subbtn, .subbtn2 {
-  background-color: rgb(90, 248, 5);
+  background-color: rgb(191, 148, 243);
   border-radius: 7px;
   font-size: 22px;
   display: flex;
@@ -200,7 +200,7 @@ input[type="text"] {
 }
 
 .subbtn2 {
-  background-color: rgb(90, 248, 5);
+  background-color: rgb(191, 148, 243);
   border-radius: 7px;
   display: block;
   font-size: 22px;
@@ -210,7 +210,7 @@ input[type="text"] {
 
 }
 .nextbtn2 {
-  background-color: rgb(90, 248, 5);
+  background-color: rgb(191, 148, 243);
   border-radius: 7px;
   font-size: 22px;
   display: flex;

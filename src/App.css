@@ -238,9 +238,9 @@ input[type="text"] {
 }
 
 .aboutimg {
-  border-radius: 10em;
+  border-radius: 20em;
   margin: 0 auto;
-  width: 53%;
+  width: 70%;
   height: 40%;
   display: flex;
   justify-content: center;
